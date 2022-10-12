@@ -1,0 +1,51 @@
+>>> 5 + 5
+10
+>>> x = 5
+>>> x
+5
+>>> 3 * x
+15
+>>> _
+15
+>>> _ + 2
+17
+
+>>> print ('Hello , Python')
+Hello , Python
+>>> 
+>>> 
+>>> for i in range(5):
+...     x = i * 10
+...     print(x)
+... 
+0
+10
+20
+30
+40
+>>> import this
+
+
+>>> import math
+>>> help 
+>>> math.factorial(5)
+120
+>>> n = 5
+>>> k = 3
+>>> from math import factorial
+>>> factorial(n) / (factorial(k) * factorial(n - k))
+10.0
+>>> from math import factorial as fac
+>>> fac(n) / (fac(k) * fac(n - k))
+10.0
+>>> fac(n) // (fac(k) * fac(n - k))
+10
+>>> fac(5)
+120
+>>> n = 100
+>>> k = 2
+>>> fac(n)
+93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000
+>>> len(str(fac(n)))
+158
+
