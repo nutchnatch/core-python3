@@ -288,3 +288,129 @@ laziness and the Infinite
 ... 
 >>> for x in lucas():
 ...     print(x)
+
+>>> print("Generator Expressions")
+Generator Expressions
+>>> 
+>>> million_squares = (x*x for x in r<nge(1, 1000001))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'r' is not defined
+>>> million_squares = (x*x for x in range(1, 1000001))
+>>> million_squares
+<generator object <genexpr> at 0x109ca91c0>
+>>> list(million_squares)[-10]
+999982000081
+>>> list(million_squares)[-10]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
+>>> sum(x*x for x in range(1, 10000001))
+
+333333383333335000000
+>>> 
+>>> 
+>>> print("Iteration Tools")
+Iteration Tools
+>>> 
+>>> from itertools import count, islice
+>>> thousand_primes = islice((x for x in count() if is_prime(x)), 1000)
+>>> thousand_primes
+<itertools.islice object at 0x109cc2ac0>
+>>> list(thousand_primes)[-10:]
+[7841, 7853, 7867, 7873, 7877, 7879, 7883, 7901, 7907, 7919]
+>>> sum(islice((x for x in count() if is_prime(x)), 1000))
+3682913
+>>> 
+>>> any([False, False, True])
+True
+>>> all([False, False, True])
+False
+>>> any(is_prime(x) for x in range(1328, 1361))
+False
+>>> all(name == name.title() for name in ['London', 'Paris', 'Tokyo', 'New York', 'Sydney', 'Kuala Lumour'])
+True
+>>> sunday = [12, 14, 15, 15, 17, 22, 22, 23, 22, 20, 18]
+>>> monday = [13, 14, 14, 14, 16, 20, 22, 22, 21, 19, 17]
+>>> for item zip(sunday, monday):
+  File "<stdin>", line 1
+    for item zip(sunday, monday):
+             ^^^
+SyntaxError: invalid syntax
+>>> for item in zip(sunday, monday):
+...     print(item)
+... 
+(12, 13)
+(14, 14)
+(15, 14)
+(15, 14)
+(17, 16)
+(22, 20)
+(22, 22)
+(23, 22)
+(22, 21)
+(20, 19)
+(18, 17)
+>>> for sun, mon in zip(sunday, monday):
+...     print("average =", (sun + mon) / 2)
+... 
+average = 12.5
+average = 14.0
+average = 14.5
+average = 14.5
+average = 16.5
+average = 21.0
+average = 22.0
+average = 22.5
+average = 21.5
+average = 19.5
+average = 17.5
+>>> from iteratools import chain
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'iteratools'
+>>> from itertools import chain
+>>> temperatures = chain(sunday, monday, tuesday)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'tuesday' is not defined
+>>> temperatures = chain(sunday, monday)
+>>> all(t > 0 for t in temperatures)
+True
+>>> for x in (p for p in lucas() id is_prime(p))
+  File "<stdin>", line 1
+    for x in (p for p in lucas() id is_prime(p))
+                                 ^^
+SyntaxError: invalid syntax
+>>> for x in (p for p in lucas() id is_prime(p)):
+  File "<stdin>", line 1
+    for x in (p for p in lucas() id is_prime(p)):
+                                 ^^
+SyntaxError: invalid syntax
+>>> for x in (p for p in lucas() if is_prime(p)):
+...     print(x)
+... 
+2
+3
+7
+11
+29
+47
+199
+521
+2207
+3571
+9349
+3010349
+54018521
+370248451
+6643838879
+119218851371
+5600748293801
+688846502588399
+^CTraceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 1, in <genexpr>
+  File "<stdin>", line 5, in is_prime
+KeyboardInterrupt
+>>> 
