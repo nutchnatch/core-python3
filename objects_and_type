@@ -1,0 +1,179 @@
+>>> print("Function Arguments")
+Function Arguments
+>>> 
+>>> def banner(message, border='-')
+  File "<stdin>", line 1
+    def banner(message, border='-')
+                                   ^
+SyntaxError: expected ':'
+>>> def banner(message, border='-'):
+...     line = border * len(message)
+...     print(line)
+...     print(message)
+...     print(line)
+... 
+>>> banner("Blue print")
+----------
+Blue print
+----------
+>>> banner("Blue print", "#")
+##########
+Blue print
+##########
+>>> banner("Blue print", "border="#")
+... 
+... 
+... 
+KeyboardInterrupt
+>>> banner("Blue print", border="#")
+##########
+Blue print
+##########
+>>> banner(border=".", "Blue print")
+  File "<stdin>", line 1
+    banner(border=".", "Blue print")
+                                   ^
+SyntaxError: positional argument follows keyword argument
+>>> banner(border=".", message="Blue print")
+..........
+Blue print
+..........
+>>> 
+>>> 
+>>> import time
+>>> time.ctime
+<built-in function ctime>
+>>> time.ctime()
+'Sun Oct 16 00:09:02 2022'
+>>> def show_default(arg=time.ctime())
+  File "<stdin>", line 1
+    def show_default(arg=time.ctime())
+                                      ^
+SyntaxError: expected ':'
+>>> def show_default(arg=time.ctime()):
+...     print(arg)
+... 
+>>> show_default(
+... 
+KeyboardInterrupt
+>>> show_default()
+Sun Oct 16 00:09:35 2022
+>>> show_default()
+Sun Oct 16 00:09:35 2022
+>>> show_default()
+Sun Oct 16 00:09:35 2022
+>>> def add_spam(menu=[]):
+...     menu.append("spam")
+...     return menu
+... 
+>>> breakfast = ['bacon', 'eggs']
+>>> add_spam(breakfast)
+['bacon', 'eggs', 'spam']
+>>> lunch = ['baked beans']
+>>> add_spam(lunch)
+['baked beans', 'spam']
+>>> add_spam()
+['spam']
+>>> add_spam()
+['spam', 'spam']
+>>> add_spam()
+['spam', 'spam', 'spam']
+>>> add_spam()
+['spam', 'spam', 'spam', 'spam']
+>>> def add_spam(menu=None):
+...     if menu is None:
+...         menu = []
+...     menu.append('spam')
+...     return menu
+... 
+>>> add_spam()
+['spam']
+>>> add_spam()
+['spam']
+>>> add_spam()
+['spam']
+>>> 
+>>> 
+>>> 
+>>> def add(a, b):
+...     return a + b
+... 
+>>> add(5, 7)
+12
+>>> add(3.1, 2.4)
+5.5
+>>> add("news", "paper")
+'newspaper'
+>>> add([1, 6], [21, 107])
+[1, 6, 21, 107]
+>>> add("The answer is", 42)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in add
+TypeError: can only concatenate str (not "int") to str
+>>> 
+>>> 
+>>> print("Rebinding Global Name")
+Rebinding Global Name
+>>> count = 0
+>>> def show_count();
+  File "<stdin>", line 1
+    def show_count();
+                    ^
+SyntaxError: expected ':'
+>>> def show_count():
+...     print(count)
+... 
+>>> def set_count(c):
+...     count = c
+... 
+>>> show_count()
+0
+>>> set_count(5)
+>>> show_count()
+0
+>>> def set_count(c):
+...     global count
+...     count = c
+... show_count()
+  File "<stdin>", line 4
+    show_count()
+    ^^^^^^^^^^
+SyntaxError: invalid syntax
+>>> set_count(5)
+>>> show_count()
+0
+>>> show_count()
+0
+>>> set_count(5)
+>>> show_count()
+0
+>>> def set_count(c):
+...     global count
+...     count = c
+... 
+>>> set_count(5)
+>>> show_count()
+5
+>>> show_count()
+5
+>>> 
+>>> 
+>>> 
+>>> print("Everything is an Object")
+Everything is an Object
+>>> 
+>>> import words
+>>> type(words)
+<class 'module'>
+>>> dir(words)
+['__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'fetch_words', 'main', 'print_items', 'sys', 'urlopen']
+>>> type(words.fetch_words)
+<class 'function'>
+>>> dir(words.fetch_words)
+['__annotations__', '__builtins__', '__call__', '__class__', '__closure__', '__code__', '__defaults__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__get__', '__getattribute__', '__globals__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__kwdefaults__', '__le__', '__lt__', '__module__', '__name__', '__ne__', '__new__', '__qualname__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__']
+>>> words.fetch_words.__name__
+'fetch_words'
+>>> words.fetch_words.__doc__
+'Fetch a list of words from a url'
+>>> 
