@@ -1,0 +1,253 @@
+>>> print('EXCEPTIONS')
+EXCEPTIONS
+>>> 
+>>> from exceptional import convert
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'exceptional'
+>>> from exceptional import convert
+KeyboardInterrupt
+>>> from exceptional import convert
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/exceptional.py", line 4
+    'one': '1'
+         ^
+SyntaxError: invalid syntax
+>>> from exceptional import convert
+>>> convert("One three three seven".split())
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/exceptional.py", line 18, in convert
+    number += DIGIT_MAP[token]
+KeyError: 'One'
+>>> convert("one three three seven".split())
+1337
+>>> convert("around two grillon".spplit())
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'str' object has no attribute 'spplit'. Did you mean: 'split'?
+>>> from exceptional import convert
+>>> convert("three four".split())
+34
+>>> ^D
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from exceptional import convert
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/exceptional.py", line 22
+    except KeyError
+                   ^
+SyntaxError: expected ':'
+>>> from exceptional import convert
+>>> convert("three four".split())
+Conversion succeeded! x = 34
+34
+>>> convert("eleventeen".split())
+Conversion failed
+-1
+>>> convert(512)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/exceptional.py", line 18, in convert
+    for token in s:
+TypeError: 'int' object is not iterable
+>>> ^D
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from exceptional import convert
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/exceptional.py", line 25
+    except: TypeError:
+                      ^
+SyntaxError: invalid syntax
+>>> ^D
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from exceptional import convert
+>>> convert(512)
+Convertion failed
+-1
+>>> ^D
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from exceptional import convert
+>>> convert(512)
+Conversion failed!
+-1
+>>> convert("around two grillon".spplit())
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'str' object has no attribute 'spplit'. Did you mean: 'split'?
+>>> convert("around two grillon".split())
+Conversion failed!
+-1
+>>> convert("one two".split())
+Conversion succeeded! x = 12
+12
+>>> ^D
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from exceptional import convert
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/exceptional.py", line 24
+    return x
+    ^
+IndentationError: expected an indented block after 'except' statement on line 23
+>>>
+>>> ^D
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from exceptional import convert
+>>> ^D
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from exceptional import convert
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/exceptional.py", line 26
+    print(f"Conversion error: {e!r},
+          ^
+SyntaxError: unterminated string literal (detected at line 26)
+>>> ^D
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from exceptional import convert
+>>> convert("fail".split())
+Conversion error: KeyError('fail')
+-1
+>>> ^D
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from exceptional import convert
+>>> from exceptional import string_log
+>>> string_log("ouch!".split())
+Conversion error: KeyError('ouch!')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/exceptional.py", line 34, in string_log
+    return log(v)
+ValueError: math domain error
+>>> ^D
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from exceptional import string_log
+>>> string_log("one two".split())
+2.4849066497880004
+>>> string_log("cat dog".split())
+Conversion error: KeyError('cat')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/exceptional.py", line 34, in string_log
+    v = convert(s)
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/exceptional.py", line 23, in convert
+    number += DIGIT_MAP[token]
+KeyError: 'cat'
+>>> ^D
+$ python3 roots.py 
+3.0
+1.414213562373095
+$ python3 roots.py 
+3.0
+1.414213562373095
+Traceback (most recent call last):
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/roots.py", line 26, in <module>
+    main()
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/roots.py", line 23, in main
+    print(sqrt(-1))
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/roots.py", line 15, in sqrt
+    guess = (guess + x / guess) / 2.0
+ZeroDivisionError: float division by zero
+$ python3 roots.py 
+3.0
+1.414213562373095
+Caanot compute a square root of a negative number.
+Program execution continues normally here.
+$ python3 roots.py 
+3.0
+1.414213562373095
+Cannot compute a square root of a negative number.
+Program execution continues normally here.
+$ python3 roots.py 
+3.0
+1.414213562373095
+Cannot compute a square root of a negative number.
+Program execution continues normally here.
+$ python3 roots.py 
+3.0
+1.414213562373095
+Traceback (most recent call last):
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/roots.py", line 36, in <module>
+    main()
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/roots.py", line 29, in main
+    print(sqrt(-1))
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/roots.py", line 14, in sqrt
+    raise ValueError("Cannot compute a square root of a negative number {x}.")
+ValueError: Cannot compute a square root of a negative number {x}.
+$ python3 roots.py 
+3.0
+1.414213562373095
+Cannot compute a square root of a negative number.
+Program execution continues normally here.
+$ python3 roots.py 
+3.0
+1.414213562373095
+Traceback (most recent call last):
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/roots.py", line 40, in <module>
+    main()
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/roots.py", line 31, in main
+    print(sqrt(-1))
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/roots.py", line 20, in sqrt
+    guess = (guess + x / guess) / 2.0
+ZeroDivisionError: float division by zero
+$ python3 roots.py 
+3.0
+1.414213562373095
+Cannot compute a square root of a negative number {x}.
+Program execution continues normally here.
+$ python3 roots.py 
+3.0
+1.414213562373095
+Cannot compute a square root of a negative number -1.
+Program execution continues normally here.
+$ python3 roots.py 
+3.0
+1.414213562373095
+Cannot compute a square root of a negative number -1.
+Program execution continues normally here.
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> z = [1, 4, 2]
+>>> z[4]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
+>>> int("jim")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: 'jim'
+>>> codes dict(gb=44, us=1, no=47, f=33)
+  File "<stdin>", line 1
+    codes dict(gb=44, us=1, no=47, f=33)
+          ^^^^
+SyntaxError: invalid syntax
+>>> codes =dict(gb=44, us=1, no=47, f=33)
+>>> codes["de"]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'de'
+>>> 
