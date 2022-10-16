@@ -1,0 +1,290 @@
+>>> print("Iterations and Iterables")
+Iterations and Iterables
+>>> 
+>>> print("List Comprehensions")
+List Comprehensions
+>>> 
+>>> words = "Why sometimes I have believed as many as six impossible things before breakfast".split()
+>>> words
+['Why', 'sometimes', 'I', 'have', 'believed', 'as', 'many', 'as', 'six', 'impossible', 'things', 'before', 'breakfast']
+>>> [len(words) for word in words]
+[13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13]
+>>> [len(word) for word in words]
+[3, 9, 1, 4, 8, 2, 4, 2, 3, 10, 6, 6, 9]
+>>> lengths = []
+>>> for word in words:
+...     lengths.append(len(word))
+... 
+>>> lengths
+[3, 9, 1, 4, 8, 2, 4, 2, 3, 10, 6, 6, 9]
+>>> from math import factorial
+>>> f = [len(str(factorial(x))) for x in range(20)]
+>>> f
+[1, 1, 1, 1, 2, 3, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 18]
+>>> type(f)
+<class 'list'>
+>>> s = {len(str(factorial(x))) for x in range(20)}
+>>> type(s)
+<class 'set'>
+>>> s
+{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 18}
+>>> 
+>>> 
+>>> print(Dict Comprehensions)
+  File "<stdin>", line 1
+    print(Dict Comprehensions)
+          ^^^^^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+>>> print("Dict Comprehensions")
+Dict Comprehensions
+>>> country_to_capital = {'United Kingdom': 'London',
+...     'Brasil': 'Brasilia',
+...     'Marocco': 'Rabat',
+...     'Sweeden': 'Stockholm' }
+>>> country_to_capital
+{'United Kingdom': 'London', 'Brasil': 'Brasilia', 'Marocco': 'Rabat', 'Sweeden': 'Stockholm'}
+>>> capital_to_country = {capital: country for country, capital in country_to_capital.items(}
+  File "<stdin>", line 1
+    capital_to_country = {capital: country for country, capital in country_to_capital.items(}
+                                                                                            ^
+SyntaxError: closing parenthesis '}' does not match opening parenthesis '('
+>>> capital_to_country = {capital: country for country, capital in country_to_capital.items()}
+>>> from pprint import pprint as pp
+>>> pp(capital_to_country)
+{'Brasilia': 'Brasil',
+ 'London': 'United Kingdom',
+ 'Rabat': 'Marocco',
+ 'Stockholm': 'Sweeden'}
+>>> words = ["hi", "hello", "foxtrot", "hotel"]
+>>> {x[0]: x for x in words}
+{'h': 'hotel', 'f': 'foxtrot'}
+>>> 
+>>> 
+>>> 
+>>> print("Complex Expressions")
+Complex Expressions
+>>> 
+py)}import os                                                                  .}
+  File "<stdin>", line 1                                                      *) 
+    file_sizes = {os.path.realpath(p): os.stat(p).st_size for p in glob.glob('*.py)}
+                                                                             ^
+SyntaxError: unterminated string literal (detected at line 1)
+>>> file_sizes = {os.path.realpath(p): os.stat(p).st_size for p in glob.glob('*.py')}
+>>> pp
+<function pprint at 0x109c7ba30>
+>>> pp(file_sizes)
+{'/Users/nivaldomonteiro/get-pip.py': 1937837}
+>>> 
+>>> 
+>>> print("Filter Comprehensions")
+Filter Comprehensions
+>>> 
+>>> from math import sqrt
+>>> def is_prime(x):
+...     if x < 2
+  File "<stdin>", line 2
+    if x < 2
+            ^
+SyntaxError: expected ':'
+>>> def is_prime(x):
+...     if x < 2:
+...         return False
+...     for i in range(2, int(sqrt(x) + 1)
+...    
+KeyboardInterrupt
+>>> def is_prime(x):
+...     if x < 2:
+...         return Fals
+...     for i in range(2, int(sqrt(x) + 1):
+  File "<stdin>", line 4
+    for i in range(2, int(sqrt(x) + 1):
+                                      ^
+SyntaxError: invalid syntax
+>>>     for i in range(2, int(sqrt(x) + 1):
+KeyboardInterrupt
+>>> def is_prime(x):
+...     if x < 2:
+...         return Fals
+... 
+KeyboardInterrupt
+>>> def is_prime(x):
+...     if x < 2:
+...         return False
+...     for i in range(2, int(sqrt(x)) + 1):
+...         if x % i == 0:
+...             return False
+...     return True
+... 
+>>> [x for x in range(101) if is_prime(x)]
+[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+>>> prime_square_divisors = {x*x: (1, x, x*x) for x in range(20) if is_prime(x)}
+>>> pp(prime_square_divisors)
+{4: (1, 2, 4),
+ 9: (1, 3, 9),
+ 25: (1, 5, 25),
+ 49: (1, 7, 49),
+ 121: (1, 11, 121),
+ 169: (1, 13, 169),
+ 289: (1, 17, 289),
+ 361: (1, 19, 361)}
+>>> 
+>>> 
+>>> 
+>>> print("Iteration Protocols")
+Iteration Protocols
+>>> 
+>>> iterable = ['Spring', 'Summer', 'Autumn', 'Winter']
+>>> iterator = iter(iter)
+iter(    iterable
+>>> iterator = iter(iterable)
+>>> next(iterator)
+'Spring'
+>>> next(iterator)
+'Summer'
+>>> next(iterator)
+'Autumn'
+>>> next(iterator)
+'Winter'
+>>> next(iterator)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+>>> def first(iterable):
+...      iterator = iter(iterable)
+...     try:
+  File "<stdin>", line 3
+    try:
+        ^
+IndentationError: unindent does not match any outer indentation level
+>>> def first(iterable):
+...      iterator = iter(iterable)
+...      try:
+...          return next(iterator)
+...      except StopIterator("Iterable is empty")
+  File "<stdin>", line 5
+    except StopIterator("Iterable is empty")
+                                            ^
+SyntaxError: expected ':'
+>>> def first(iterable):
+...      iterator = iter(iterable)
+...      try:
+...          return next(iterator)
+...      except StopIteration:
+...          raise ValueError("Iterable is empty")
+... 
+>>> first(["1st", "2nd", "3rd"])
+'1st'
+>>> first(["1st", "2nd", "3rd"])
+'1st'
+>>> first(["1st", "2nd", "3rd"])
+'1st'
+>>> first({"1st", "2nd", "3rd"})
+'2nd'
+>>> first({"1st", "2nd", "3rd"})
+'2nd'
+>>> first(set())
+Traceback (most recent call last):
+  File "<stdin>", line 4, in first
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 6, in first
+ValueError: Iterable is empty
+>>> 
+>>> 
+>>> 
+>>> print("Generator Functions")
+Generator Functions
+>>> 
+>>> def gen123():
+...     yield 1
+...     yield 2
+...     yield 3
+...     
+... 
+>>> g = gen123()
+>>> g
+<generator object gen123 at 0x109ca91c0>
+>>> next(g)
+1
+>>> next(g)
+2
+>>> next(g)
+3
+>>> next(g)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+>>> for v in gen123():
+...     print(v)
+... 
+1
+2
+3
+>>> h = gen123()
+>>> i = gen123()
+>>> h
+<generator object gen123 at 0x109ca9230>
+>>> i
+<generator object gen123 at 0x109ca92a0>
+>>> next(h)
+1
+>>> next(i)
+1
+>>> next(i)
+2
+>>> next(i)
+3
+>>> next(h)
+2
+>>>
+>>> 
+>>> def gen246():
+...     print("About to yield 2")
+...     yield 2
+...     print("About to yield 2")
+...     yield 4
+...     print("About to yield 6")
+...     yield 6
+...     print("About to return")
+... 
+>>> g
+<generator object gen123 at 0x109ca91c0>
+>>> g = gen246()
+>>> next(g)
+About to yield 2
+2
+>>> 
+>>> next(g)
+About to yield 2
+4
+>>> next(g)
+About to yield 6
+6
+>>> 
+>>> 
+>>> print(Graphical Debugger)
+  File "<stdin>", line 1
+    print(Graphical Debugger)
+          ^^^^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+>>> 
+>>> print("Graphical Debugger")
+Graphical Debugger
+>>> 
+>>> print("laziness and the Infinite")
+laziness and the Infinite
+>>> 
+>>> def lucas():
+...     yield 2
+...     a = 2
+...     b = 1
+...     while True: 
+...         yield b
+...         a, b = b, a + b
+... 
+>>> for x in lucas():
+...     print(x)
