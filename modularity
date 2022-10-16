@@ -1,0 +1,109 @@
+$ python3 words.py 
+$ python3 words.py 
+
+phyton3
+-bash: phyton3: command not found
+python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> 
+>>> 
+>>> 
+>>> print("Functions")
+Functions
+>>> 
+>>> def square(x):
+...     return x * x
+... 
+>>> square(5)
+25
+>>> def launch_missiles():
+...     print("Missiles lainched!")
+... 
+>>> launch_missiles()
+Missiles lainched!
+>>> 
+>>> 
+>>> def even_or_odd(n):
+...     if n % 2 == 0:
+...         print("even")
+...         return
+...     print("odd")
+... 
+>>> w = even_or_odd(31)
+odd
+>>> w is None
+True
+>>> def nth_root(radincand, n):
+...     return radicand ** (1/n)
+... 
+>>> nth_root(16,2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in nth_root
+NameError: name 'radicand' is not defined. Did you mean: 'radincand'?
+>>> def nth_root(radicand, n):
+...     return radicand ** (1/n)
+... 
+>>> nth_root(16,2)
+4.0
+>>> nth_root(27,3)
+3.0
+>>> pwd
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'pwd' is not defined
+>>> import words
+>>> import words
+>>> words.fetch_words()
+
+>>> from words import fetch_words
+>>> fetch_words()
+
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import words
+>>> import words
+>>> ^D
+
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import words
+words
+>>> import words
+>>> ^D
+
+$ python3 words.py 
+__main__
+Nivaldos-MBP:core-python3 nivaldomonteiro$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import words
+>>> ^D
+
+$ python3 words.py 
+
+$ python3
+>>> from words import (fetch_words, print_words)
+>>> print_words(fetch_words())
+
+>>> from words import *
+>>> fetch_words()
+>>> print_words([Joan, Lila, Peter])
+>>> print_words(['Joan', 'Lila', 'Peter'])
+>>> main()
+$ python3 words.py 'http://sixty-north.com/c/t.txt'
+$ python3
+>>> from words import *
+>>> main()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/words.py", line 19, in main
+    url = sys.argv[1]
+IndexError: list index out of range
+
+>>> from words import *
+>>> main("http://sixty-north.com/c/t.txt")
