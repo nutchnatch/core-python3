@@ -1,0 +1,712 @@
+>>> print('Builtin Collections')
+Builtin Collections
+>>> 
+>>> print('TUPPLE')
+TUPPLE
+>>> 
+>>> print('Immutable sequence of arbitrary objects')
+Immutable sequence of arbitrary objects
+>>>  
+>>> t = ("Norway", 4.953, 3)
+>>> t
+('Norway', 4.953, 3)
+>>> t[2]
+3
+>>> len(t)
+3
+>>> for item in t:
+...     print(item)
+... 
+Norway
+4.953
+3
+>>> t + (338186.0, 265e9)
+('Norway', 4.953, 3, 338186.0, 265000000000.0)
+>>> t * 3
+('Norway', 4.953, 3, 'Norway', 4.953, 3, 'Norway', 4.953, 3)
+>>> a = ((220, 284), 3, (1184, 1210), (2620, 2924), (5020, 5564), >>> a = ((220, 284), 3, (1184, 1210), (2620, 2924), (5020, 5564), (6232, 6368))
+>>> a[2][1]
+1210
+>>> h = (391)
+>>> h
+391
+>>> type(h)
+<class 'int'>
+>>> k = (391,)
+>>> k
+(391,)
+>>> type(k)
+<class 'tuple'>
+>>> e = ()
+>>> e
+()
+>>> type(e)
+<class 'tuple'>
+>>> p = 1, 1, 1, 4, 6, 19
+>>> type(p)
+<class 'tuple'>
+>>> def minmax(items):
+...     return min(items), max(items)
+... 
+>>> minmax([83, 33, 84, 32, 85, 31, 86]
+... )
+(31, 86)
+>>> print('Tuple Unpacked')
+Tuple Unpacked
+>>> lower, upper = minmax(83, 33, 84, 32, 85, 31, 86])
+  File "<stdin>", line 1
+    lower, upper = minmax(83, 33, 84, 32, 85, 31, 86])
+                                                    ^
+SyntaxError: closing parenthesis ']' does not match opening parenthesis '('
+>>> lower, upper = minmax([83, 33, 84, 32, 85, 31, 86])
+>>> lower
+31
+>>> upper
+86
+>>> (a, (b, (c, d))) = (4, (3, (2, 1)))
+>>> a
+4
+>>> b
+3
+>>> c
+2
+>>> d
+1
+>>> a = 'jelly'
+>>> b = 'been'
+>>> a, b = b, a
+>>> a 
+'been'
+>>> b
+'jelly'
+>>> tuple([561, 1105, 1729, 2465])
+(561, 1105, 1729, 2465)
+>>> tuple("Carmichael")
+('C', 'a', 'r', 'm', 'i', 'c', 'h', 'a', 'e', 'l')
+>>> 5 in (3, 5, 17, 257, 65537)
+True
+>>> 5 not in (3, 5, 17, 257, 65537)
+False
+>>>
+>>> 
+>>> print(STRING)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'STRING' is not defined
+>>> print("STRING")
+STRING
+>>> 
+>>> len("redsfdsffgsdjfdhfiewuiashfkajshdkjashda")
+39
+>>> "New" + "found" + "land"
+'Newfoundland'
+>>> a = "New"
+>>> s += "found"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 's' is not defined
+>>> s += "land"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 's' is not defined
+>>> s += "land"
+KeyboardInterrupt
+>>> s = "New"
+>>> s += "found"
+>>> s += "land"
+>>> s
+'Newfoundland'
+>>> colors = ';'.join(['#34hjj', '#2323dre', '#34hjhk'])
+>>> colors
+'#34hjj;#2323dre;#34hjhk'
+>>> colors.split(';')
+['#34hjj', '#2323dre', '#34hjhk']
+>>> ''.join(['high', 'way', 'man'])
+'highwayman'
+>>> "ubforgetable".partition('forget')
+('ub', 'forget', 'able')
+>>> departure, separator, arrival = "London:Edinburg".partition(':')
+>>> departure
+'London'
+>>> separator
+':'
+>>> arrival
+'Edinburg'
+>>> origin, _, destination = "Seattle-Boston".partition('-')
+>>> origin
+'Seattle'
+>>> destination
+'Boston'
+>>> "The age of {0} is {1}".format('Jim', 32)
+'The age of Jim is 32'
+>>> "The age of {0} is {1}. {0}'s birthday is on {2}".format('Fred', 32, 'October 31')
+"The age of Fred is 32. Fred's birthday is on October 31"
+>>> "Reticulating spline {} of {}.".format(4, 23)
+'Reticulating spline 4 of 23.'
+>>> "Galatic position x={pos[0]}, y={pos[1]}, z={pos[2]}".format(pos=(65.2, 23.1, 82.2))
+'Galatic position x=65.2, y=23.1, z=82.2'
+>>> import math
+>>> "Math constants: pi={m.pi}, e={m.e}".format(m=math)
+'Math constants: pi=3.141592653589793, e=2.718281828459045'
+>>> "Math constants: pi={m.pi:.3f}, e={m.e:.3f}".format(m=math)
+'Math constants: pi=3.142, e=2.718'
+>>> value = 4 * 20
+>>> value
+80
+>>> 'The value is {value}'.format(value=value)
+'The value is 80'
+>>> value = 4 * 20
+>>> f'The value is {value}'
+'The value is 80'
+>>> import datetime
+>>> f'The current time is {datetime.datetime.now().isoformat()}.'
+'The current time is 2022-10-16T18:27:42.204202.'
+>>> f'Math constants: pi={m.pi}, e={m.e}'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'm' is not defined
+>>> f'Math constants: pi={m.pi}, e={m.e}'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'm' is not defined
+>>> import math
+>>> f'Math constants: pi={m.pi}, e={m.e}'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'm' is not defined
+>>> f'Math constants: pi={math.pi}, e={math.e}'
+'Math constants: pi=3.141592653589793, e=2.718281828459045'
+>>> 
+>>> 
+>>> 
+>>> print('RANGE')
+RANGE
+>>> print('Sequence reprensenting an arithmetic progression of integers')
+Sequence reprensenting an arithmetic progression of integers
+>>> 
+>>> range(5)
+range(0, 5)
+>>> for i in range(5):
+...     print i
+  File "<stdin>", line 2
+    print i
+    ^^^^^^^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?
+>>> for i in range(5):
+...     print(i)
+... 
+0
+1
+2
+3
+4
+>>> range(5, 10)
+range(5, 10)
+>>> list(range(5, 10))
+[5, 6, 7, 8, 9]
+>>> list(range(1, 10, 2))
+[1, 3, 5, 7, 9]
+>>> s = [0, 1, 4, 6, 13]
+>>> for i in range(len(s)):
+...     print(s[i])
+... 
+0
+1
+4
+6
+13
+>>> s = [0, 1, 4, 6, 13]
+>>> for v in s:
+...     print(v)
+... 
+0
+1
+4
+6
+13
+>>> 
+>>> print('enumerate')
+enumerate
+>>> print('Constructs an iterable of (index, value) tuples around another iterable object')
+Constructs an iterable of (index, value) tuples around another iterable object
+>>> t = [6, 372, 8863, 14553, 23323]
+>>> for p in enumerate(t):
+...     print(p)
+... 
+(0, 6)
+(1, 372)
+(2, 8863)
+(3, 14553)
+(4, 23323)
+>>> for i, v in enumerate(t):
+...     print(f"i = {i}, v ={v})
+  File "<stdin>", line 2
+    print(f"i = {i}, v ={v})
+          ^
+SyntaxError: unterminated string literal (detected at line 2)
+>>>     print(f"i = {i}, v ={v}")
+  File "<stdin>", line 1
+    print(f"i = {i}, v ={v}")
+IndentationError: unexpected indent
+>>> for i, v in enumerate(t):
+...     print(f"i = {i}, v ={v}")
+... 
+i = 0, v =6
+i = 1, v =372
+i = 2, v =8863
+i = 3, v =14553
+i = 4, v =23323
+>>> 
+>>> 
+>>> 
+>>> print('LISTS')
+LISTS
+>>> 
+>>> print('Negative Indices')
+Negative Indices
+>>> print('Index from the end of sequences using negative numbers')
+Index from the end of sequences using negative numbers
+>>> r = [1, -4, 10, -16, 15]
+>>> r[-1]
+15
+>>> r[-2]
+-16
+>>> r[len(r) - 1]
+15
+>>> r[0]
+1
+>>> r[-0]
+1
+>>> 
+>>> print('SLICING')
+SLICING
+>>> print('Extended form of indexing for referring to a portion of a list or other sequence')
+Extended form of indexing for referring to a portion of a list or other sequence
+>>> s = [3, 186, 4432, 74400, 1048443]
+>>> s[1:3]
+[186, 4432]
+>>> s[1:-1]
+[186, 4432, 74400]
+>>> s[2:]
+[4432, 74400, 1048443]
+>>> s[:2]
+[3, 186]
+>>> s[:]
+[3, 186, 4432, 74400, 1048443]
+>>> t = s
+>>> t is s
+True
+>>> r = s[:]
+>>> r is s
+False
+>>> r == s
+True
+>>> u = s.copy()
+>>> u is s
+False
+>>> u == s
+True
+>>> v = list(s)
+>>> a = [[1,2], [3, 4]]
+>>> b = a[:]
+>>> a is b
+False
+>>> a == b
+True
+>>> a[0]
+[1, 2]
+>>> b[0]
+[1, 2]
+>>> a[0] is b[0]
+True
+>>> a[0] = [8, 9]
+>>> a[0]
+[8, 9]
+>>> b[0]
+[1, 2]
+>>> a[1].append(5)
+>>> a[1]
+[3, 4, 5]
+>>> a
+[[8, 9], [3, 4, 5]]
+>>> b
+[[1, 2], [3, 4, 5]]
+>>> c = [21, 37]
+>>> d = c * 4
+>>> d
+[21, 37, 21, 37, 21, 37, 21, 37]
+>>> [0] * 9
+[0, 0, 0, 0, 0, 0, 0, 0, 0]
+>>> s = [[-1, +1]] * 5
+>>> s
+[[-1, 1], [-1, 1], [-1, 1], [-1, 1], [-1, 1]]
+>>> s[2].append(7)
+>>> s
+[[-1, 1, 7], [-1, 1, 7], [-1, 1, 7], [-1, 1, 7], [-1, 1, 7]]
+>>> w = "the quick brown fox jumps over the lazy dog".split()
+>>> w
+['the', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog']
+>>> i = w.index('fox')
+>>> i
+3
+>>> w[i]
+'fox'
+>>> w.index('unicorn')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: 'unicorn' is not in list
+>>> w.count("the")
+2
+>>> 37 in [1, 78, 9, 37, 53]
+True
+>>> 78 not in [1, 78, 9, 37, 53]
+False
+>>> del w[0]
+>>> w
+['quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog']
+>>> w.remove('quick')
+>>> w
+['brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog']
+>>> del w[w.index('fox')]
+>>> w
+['brown', 'jumps', 'over', 'the', 'lazy', 'dog']
+>>> w.remove('pyramid')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: list.remove(x): x not in list
+>>> a = 'I accidentally the whole Universe'.split()
+>>> a
+['I', 'accidentally', 'the', 'whole', 'Universe']
+>>> a insert(2, "created")
+  File "<stdin>", line 1
+    a insert(2, "created")
+      ^^^^^^
+SyntaxError: invalid syntax
+>>> a.insert(2, "created")
+>>> a
+['I', 'accidentally', 'created', 'the', 'whole', 'Universe']
+>>> ''.join(a)
+'IaccidentallycreatedthewholeUniverse'
+>>> ' '.join(a)
+'I accidentally created the whole Universe'
+>>> m = [2, 1, 3]
+>>> n = [4, 7, 11]
+>>> k = m + n
+>>> k
+[2, 1, 3, 4, 7, 11]
+>>> k += [18, 29, 47]
+>>> k
+[2, 1, 3, 4, 7, 11, 18, 29, 47]
+>>> k.extend([67,34, 65])
+>>> k
+[2, 1, 3, 4, 7, 11, 18, 29, 47, 67, 34, 65]
+>>> g = [1, 11, 21]
+>>> g.reverse()
+>>> g
+[21, 11, 1]
+>>> d = [17, 41, 29]
+>>> d.sort()
+>>> s
+[[-1, 1, 7], [-1, 1, 7], [-1, 1, 7], [-1, 1, 7], [-1, 1, 7]]
+>>> d
+[17, 29, 41]
+>>> d.sort(reverse=True)
+>>> d
+[41, 29, 17]
+>>> h = 'not perplexing do handwriting family where I ilegibly know doctors'.split()
+>>> h
+['not', 'perplexing', 'do', 'handwriting', 'family', 'where', 'I', 'ilegibly', 'know', 'doctors']
+>>> h.sort(key=len)
+>>> h
+['I', 'do', 'not', 'know', 'where', 'family', 'doctors', 'ilegibly', 'perplexing', 'handwriting']
+>>> y = [4, 9, 2, 1]
+>>> x = sorted(y)
+>>> x
+[1, 2, 4, 9]
+>>> y
+[4, 9, 2, 1]
+>>> p = [9, 3, 1, 0]
+>>> q = reversed(p)
+>>> q
+<list_reverseiterator object at 0x10f0b26b0>
+>>> list(q)
+[0, 1, 3, 9]
+>>> 
+>>> 
+>>> print('DICTIONARIES')
+DICTIONARIES
+>>> 
+>>> 
+>>> 
+>>> urls = { 'Google': 'http://google.com,'}
+>>>     'Pluralsight': 'http://pluralsight.com'
+KeyboardInterrupt
+>>> urls = { 'Google': 'http://google.com,'
+...     'Pluralsight': 'http://pluralsight.com',
+  File "<stdin>", line 2
+    'Pluralsight': 'http://pluralsight.com',
+                 ^
+SyntaxError: invalid syntax
+>>> urls = { 'Google': 'http://google.com,'
+...     'Pluralsight': 'http://pluralsight.com'
+KeyboardInterrupt
+>>> urls = { 'Google': 'http://google.com,
+  File "<stdin>", line 1
+    urls = { 'Google': 'http://google.com,
+                       ^
+SyntaxError: unterminated string literal (detected at line 1)
+>>> urls = { 'Google': 'http://google.com',
+...     'Pluralsight': 'http://pluralsight.com',
+...     'Microsoft':'http://microsoft.com'}
+>>> urls
+{'Google': 'http://google.com', 'Pluralsight': 'http://pluralsight.com', 'Microsoft': 'http://microsoft.com'}
+>>> urls['Google']
+'http://google.com'
+>>> names_and_ages = [('Alice', 32), ('Bob', 48), ('Greg', 21)]
+>>> d = dict(names_and_ages)
+>>> d
+{'Alice': 32, 'Bob': 48, 'Greg': 21}
+>>> phonethic = dict(a='alfa', b='bravo', c='chrlie')
+>>> phonethic
+{'a': 'alfa', 'b': 'bravo', 'c': 'chrlie'}
+>>> d = dict(goldenrod=0xDAA520, indigo=0x4B0053, seashell=0xFF5EE)
+>>> e = d.copy()
+>>> e
+{'goldenrod': 14329120, 'indigo': 4915283, 'seashell': 1045998}
+>>> f = dict(e)
+>>> f
+{'goldenrod': 14329120, 'indigo': 4915283, 'seashell': 1045998}
+>>> g = dict(wheat=0xF5JJH, khaki=0xHJ87)
+  File "<stdin>", line 1
+    g = dict(wheat=0xF5JJH, khaki=0xHJ87)
+                      ^
+SyntaxError: invalid hexadecimal literal
+>>> f.update(g)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+>>> g = dict(wheat=0xF5JJH, khaki=0xHJ87)
+  File "<stdin>", line 1
+    g = dict(wheat=0xF5JJH, khaki=0xHJ87)
+                      ^
+SyntaxError: invalid hexadecimal literal
+>>> g = dict(wheat=0xF5DEB3, khaki=0xF0E68C)
+>>> f.update(g)
+>>> f
+{'goldenrod': 14329120, 'indigo': 4915283, 'seashell': 1045998, 'wheat': 16113331, 'khaki': 15787660}
+>>> for k in f:
+...     print(k9
+... 
+... )
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+NameError: name 'k9' is not defined. Did you mean: 'k'?
+>>> for k in f:
+...     print(k)
+... 
+goldenrod
+indigo
+seashell
+wheat
+khaki
+>>> for k in f:
+...     print(f"{k} => {f[k]})
+  File "<stdin>", line 2
+    print(f"{k} => {f[k]})
+          ^
+SyntaxError: unterminated string literal (detected at line 2)
+>>> for k in f:
+...     print(f"{k} => {f[k]}")
+... 
+goldenrod => 14329120
+indigo => 4915283
+seashell => 1045998
+wheat => 16113331
+khaki => 15787660
+>>> for value in f.values():
+...     print(value)
+... 
+14329120
+4915283
+1045998
+16113331
+15787660
+>>> for key in f.keys():
+...     print(key)
+... 
+goldenrod
+indigo
+seashell
+wheat
+khaki
+>>> for key, value in f.items():
+...     print(f"{key} => {value}")
+... 
+goldenrod => 14329120
+indigo => 4915283
+seashell => 1045998
+wheat => 16113331
+khaki => 15787660
+>>> symbols = dict(usd='$', gdb='&', nzd='ª')
+>>> symbols
+{'usd': '$', 'gdb': '&', 'nzd': 'ª'}
+>>> nzd in symbols
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'nzd' is not defined
+>>> 'nzd' in symbols
+True
+>>> 'mkd' not in symbols
+True
+>>> z = {'H': 1, 'Tc':43, 'Xe': 54}
+>>> del z['Tc']
+>>> z
+{'H': 1, 'Xe': 54}
+>>> from pprint import pprint as pp
+>>> pp(f)
+{'goldenrod': 14329120,
+ 'indigo': 4915283,
+ 'khaki': 15787660,
+ 'seashell': 1045998,
+ 'wheat': 16113331}
+>>> 
+>>> 
+>>> 
+>>> print('SET')
+SET
+>>> print('Unorder collection of unique elements.')
+Unorder collection of unique elements.
+>>> print('Sets are mutable')
+Sets are mutable
+>>> 
+>>> p = {6, 28, 496, 5655, 2323}
+>>> p
+{496, 2323, 6, 5655, 28}
+>>> type(p)
+<class 'set'>
+>>> d = {}
+>>> type(d)
+<class 'dict'>
+>>> e = set()
+>>> e
+set()
+>>> s = set([2, 4, 16, 64, 4564, 2343])
+>>> s
+{64, 2, 4, 2343, 16, 4564}
+>>> t = [1, 4, 2, 1, 7, 9, 9, 2]
+>>> set(t)
+{1, 2, 4, 7, 9}
+>>> for x in {1, 2, 4, 8, 16, 31}
+  File "<stdin>", line 1
+    for x in {1, 2, 4, 8, 16, 31}
+                                 ^
+SyntaxError: expected ':'
+>>> for x in {1, 2, 4, 8, 16, 31}:
+...     perint(x)
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+NameError: name 'perint' is not defined. Did you mean: 'print'?
+>>>     print(x)
+  File "<stdin>", line 1
+    print(x)
+IndentationError: unexpected indent
+>>> for x in {1, 2, 4, 8, 16, 31}:
+...     print(x)
+... 
+1
+2
+4
+8
+16
+31
+>>> q = {2, 9, 6, 4}
+>>> 3 in q
+False
+>>> 3 not in q
+True
+>>> q.add(81, 190)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: set.add() takes exactly one argument (2 given)
+>>> q.add(81)
+>>> q
+{2, 4, 6, 9, 81}
+>>> q.update([31, 42, 45])
+>>> q
+{2, 4, 6, 9, 42, 45, 81, 31}
+>>> k.remove(9)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'str' object has no attribute 'remove'
+>>> q.remove(9)
+>>> q
+{2, 4, 6, 42, 45, 81, 31}
+>>> k.discard(42)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'str' object has no attribute 'discard'
+>>> q.discard(42)
+>>> q
+{2, 4, 6, 45, 81, 31}
+>>> j = q.copy()
+>>> j
+{81, 2, 4, 6, 45, 31}
+>>> m = set(j)
+>>> m
+{81, 2, 4, 6, 45, 31}
+>>> blue_yes = {'Olivia', 'Harry', 'Lilly', 'Jack'}
+>>> blond_hair = {'Harry', 'Jack', 'Amelia'}
+>>> smell_hcn = {'Harry', 'Amelia'}
+>>> test;2D_ptc = {'Harry', 'Lilly', 'Amelia'}
+  File "<stdin>", line 1
+    test;2D_ptc = {'Harry', 'Lilly', 'Amelia'}
+         ^
+SyntaxError: invalid decimal literal
+>>> test_ptc = {'Harry', 'Lilly', 'Amelia'}
+>>> o_blood = {'Mia', 'Joshua', 'Amelia'}
+>>> a_blood= {'Jack, 'Harry''}
+  File "<stdin>", line 1
+    a_blood= {'Jack, 'Harry''}
+              ^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+>>> a_blood= {'Jack', 'Harry''}
+  File "<stdin>", line 1
+    a_blood= {'Jack', 'Harry''}
+                             ^
+SyntaxError: unterminated string literal (detected at line 1)
+>>> a_blood = {'Jack', 'Harry'}
+>>> ab_blood = {'Joshua', 'Lola'}
+>>> blue_yes.union(blond_hair)
+{'Harry', 'Olivia', 'Jack', 'Amelia', 'Lilly'}
+>>> blue_yes.union(blond_hair) == blond_hair.unio(blue_yes)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'set' object has no attribute 'unio'. Did you mean: 'union'?
+>>> blue_yes.union(blond_hair) == blond_hair.union(blue_yes)
+True
+>>> blue_yes.intersection(blond_hair)
+{'Harry', 'Jack'}
+>>> blond_hair.difference(blue_yes)
+{'Amelia'}
+>>> blue_yes.difference(blond_hair) == blond_hair.difference(blue_yes)
+False
+>>> blond_hair.symmetric_difference(blue_yes)
+{'Olivia', 'Amelia', 'Lilly'}
+>>> blue_yes.symmetric_difference(blond_hair) == blond_hair.symmetric_difference(blue_yes)
+True
+>>> smell_hcn.issubset(blond_hair)
+True
+>>> test_ptc.issuperset(smell_hcn)
+True
+>>> a_blood.isdisjoint(o_blood)
+True
+>>> 
+>>> 
+>>> print('PROTOCOLS')
+PROTOCOLS
+>>> 
+>>> print('A set of operations that a type must support to implement the protocol')
+A set of operations that a type must support to implement the protocol
+>>> 

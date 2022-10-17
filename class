@@ -1,0 +1,113 @@
+>>> print("Class")
+Class
+>>> 
+>>> print("Define the structure and behavior of objects")
+Define the structure and behavior of objects
+>>> 
+>>> print("Acts as a template for creating new objects")
+Acts as a template for creating new objects
+>>> print("Classes control an object's initial state, attributes and methods")
+Classes control an object's initial state, attributes and methods
+>>> 
+>>> ^D
+Nivaldos-MBP:~ nivaldomonteiro$ pwd
+/Users/nivaldomonteiro
+Nivaldos-MBP:~ nivaldomonteiro$ cd /Users/nivaldomonteiro/Documents/courses/plurasight/core-python3 
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from airtravel import Flight
+>>> Flight
+<class 'airtravel.Flight'>
+>>> f = FLight()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'FLight' is not defined. Did you mean: 'Flight'?
+>>> f = Flight()
+>>> type(f)
+<class 'airtravel.Flight'>
+>>> ^D
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from airtravel import Flight
+>>> f = Flight()
+>>> f.number()
+'SN060'
+>>> Flight.number(f)
+'SN060'
+>>> ^D
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from airtravel import Flight
+>>> f = Flight()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: Flight.__init__() missing 1 required positional argument: 'number'
+>>> f = Flight("SN060")
+>>> f.number()
+'SN060'
+>>> ^D
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from airtravel import Flight
+>>> f = Flight("SN060")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/airtravel.py", line 13, in __init__
+    if not (number[2:].isdigit() and int(number[2:] <= 9999)):
+TypeError: '<=' not supported between instances of 'str' and 'int'
+>>> ^D
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from airtravel import Flight
+>>> f = Flight("SN060")
+>>> f = Flight("060")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/airtravel.py", line 8, in __init__
+    raise ValueError(f"No airline code in '{number}'")
+ValueError: No airline code in '060'
+>>> f = Flight("sn060")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/airtravel.py", line 11, in __init__
+    raise ValueError(f"Invalid airline code '{number}'")
+ValueError: Invalid airline code 'sn060'
+>>> f = Flight("sn0bcb")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/airtravel.py", line 11, in __init__
+    raise ValueError(f"Invalid airline code '{number}'")
+ValueError: Invalid airline code 'sn0bcb'
+>>> f = Flight("SN12345")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/nivaldomonteiro/Documents/courses/plurasight/core-python3/airtravel.py", line 14, in __init__
+    raise ValueError(f"Invalid route number '{number}'")
+ValueError: Invalid route number 'SN12345'
+>>> ^D
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from airtravel import Flight
+>>> from airtravel import *
+>>> a = Aircraft("G-EUPT", "Airbus A319", num_rows=22, num_seats_per_row=6)
+>>> a.registration()
+'G-EUPT'
+>>> a.model()
+'Airbus A319'
+>>> a.seating_plan()
+(range(1, 23), 'ABCDEF')
+>>> ^D
+$ python3
+Python 3.10.8 (v3.10.8:aaaf517424, Oct 11 2022, 10:14:40) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from airtravel import *
+>>> f = Flight("BA758", Aircraft("G-EUPT", "Airbus A319", num_rows=22, num_seats_per_row=6))
+>>> f.aircraft_model()
+'Airbus A319'
+>>> 
